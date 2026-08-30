@@ -10,7 +10,7 @@ No login. No server. No setup. Just open the URL and go.
 
 ## 🔗 Live App
 
-👉 **[jacobcaindevelopment.github.io/seopageaudit](https://jacobcaindevelopment.github.io/seopageaudit)**
+👉 **[jacobcaindevelopment.github.io/seopageaudit](https://jacobcaindevelopment.github.io/seo-page-audit)**
 
 ---
 
