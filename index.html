@@ -277,7 +277,7 @@ td{padding:11px 14px;font-size:13px;color:var(--text2);vertical-align:middle}
       </div>
 
       <div id="pane-demo" style="display:none">
-        <div class="alert alert-info">Demo mode — loads 15 realistic pages from a fictional car dealership site. No GA4 account needed.</div>
+        <div class="alert alert-info">Demo mode — loads 10 sample pages from a fictional car dealership site. No GA4 account needed.</div>
         <button class="btn btn-ghost" style="margin-top:12px" onclick="loadDemo()">Load Demo Data →</button>
       </div>
     </div>
@@ -550,22 +550,22 @@ function parseGA4Text(raw, source) {
 // ═══════════════════════════════════════
 function loadDemo() {
   const demo = [
-    {path:'/used-inventory/index.htm', title:'Used Cars For Sale',           views:54337},
-    {path:'/',                          title:'Home',                         views:18986},
-    {path:'/new-inventory/index.htm',  title:'New Cars',                     views:16700},
-    {path:'/all-inventory/index.htm',  title:'All Inventory',                views:16224},
-    {path:'/used-inventory/cheap-used-cars.htm',title:'Cheap Used Cars',    views:2181},
-    {path:'/certified-inventory/index.htm',title:'Certified Pre-Owned',     views:1658},
-    {path:'/new-car-deals-index.htm',  title:'New Car Deals',                views:1096},
-    {path:'/schedule-service.htm',     title:'Schedule Service',             views:778},
-    {path:'/about-us.htm',             title:'About Us',                     views:520},
-    {path:'/contact-us.htm',           title:'Contact Us',                   views:410},
+    {path:'/used-inventory/index.htm', title:'Used Cars For Sale',           views:50000},
+    {path:'/',                          title:'Home',                         views:20000},
+    {path:'/new-inventory/index.htm',  title:'New Cars',                     views:17500},
+    {path:'/all-inventory/index.htm',  title:'All Inventory',                views:16000},
+    {path:'/used-inventory/cheap-used-cars.htm',title:'Cheap Used Cars',    views:2500},
+    {path:'/certified-inventory/index.htm',title:'Certified Pre-Owned',     views:1500},
+    {path:'/new-car-deals-index.htm',  title:'New Car Deals',                views:1000},
+    {path:'/schedule-service.htm',     title:'Schedule Service',             views:750},
+    {path:'/about-us.htm',             title:'About Us',                     views:500},
+    {path:'/contact-us.htm',           title:'Contact Us',                   views:400},
   ];
   const pages = demo.map((d,i) => ({...d, id:'p'+i, rank:i+1}));
   S.rawPages = pages;
   S.metricLabel = 'Views';
   if (!document.getElementById('in-url').value.trim()) {
-    document.getElementById('in-url').value = 'https://jeffwylerspringfield.com';
+    document.getElementById('in-url').value = 'https://demo-premium-auto.com';
   }
   document.getElementById('loaded-preview').style.display = 'block';
   document.getElementById('loaded-preview').innerHTML =
@@ -588,7 +588,7 @@ function goSelect() {
     return;
   }
   // Ensure URL always has a protocol — without it, links become relative
-  // e.g. "jeffwylerspringfield.com" → "https://jeffwylerspringfield.com"
+  // e.g. "demo-premium-auto.com" → "https://demo-premium-auto.com"
   let cleanUrl = url.replace(/\/+$/, '');
   if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://')) {
     cleanUrl = 'https://' + cleanUrl;
